@@ -43,6 +43,10 @@ jobs:
       # You may pin to the exact commit or the version.
       # uses: zyborg/dotnet-tests-report@ce730c068bb73480dcb37c02d40890bf8b44c953
       uses: zyborg/dotnet-tests-report@v1.4.4
+      with:
+          report_name: Api Demo Test Report
+          report_title: Api Demo Test Report
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
 

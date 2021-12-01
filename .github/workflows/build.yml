@@ -26,6 +26,33 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet build --no-restore 
+      
+    #- name: Test
+    #  run: dotnet test --no-build --verbosity normal --logger "trx;LogFileName=test-results.trx"
+      
+   # - name: Publish Test Results
+   #   uses: dorny/test-reporter@v1.5.0
+   #   if: success() || failure()
+   #   with: 
+   #     name: Test Result View
+   #     path: 
+    
+    
+    - name: dotnet-tests-report
+      # You may pin to the exact commit or the version.
+      # uses: zyborg/dotnet-tests-report@ce730c068bb73480dcb37c02d40890bf8b44c953
+      uses: zyborg/dotnet-tests-report@v1.4.4
+      with:
+          report_name: Api Demo Test Report
+          report_title: Api Demo Test Report
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          gist_name: api_tests.md
+          gist_badge_label: 'Contoso Business: %Counters_passed%/%Counters_total%'
+          gist_token: ${{ secrets.GIST_TOKEN }}
+
+
+
+
+  
+      

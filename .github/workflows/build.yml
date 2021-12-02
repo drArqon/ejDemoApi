@@ -40,6 +40,7 @@ jobs:
     
     
     - name: dotnet-tests-report
+      id: testAction3a
       # You may pin to the exact commit or the version.
       # uses: zyborg/dotnet-tests-report@ce730c068bb73480dcb37c02d40890bf8b44c953
       uses: zyborg/dotnet-tests-report@v1.4.4
@@ -50,6 +51,16 @@ jobs:
           gist_name: api_tests.md
           gist_badge_label: 'Contoso Business: %Counters_passed%/%Counters_total%'
           gist_token: ${{ secrets.GIST_TOKEN }}
+          
+    - name: dump test results
+      shell: pwsh
+      run: |
+          Write-ActionInfo '    * result_value    = ${{ steps.testAction3a.outputs.result_value }}'
+          Write-ActionInfo '    * total_count     = ${{ steps.testAction3a.outputs.total_count }}'
+          Write-ActionInfo '    * passed_count    = ${{ steps.testAction3a.outputs.passed_count }}'
+          Write-ActionInfo '    * failed_count    = ${{ steps.testAction3a.outputs.failed_count }}'
+          Write-ActionInfo '    * gist_report_url = ${{ steps.testAction3a.outputs.gist_report_url }}'
+          Write-ActionInfo '    * gist_badge_url  = ${{ steps.testAction3a.outputs.gist_badge_url }}'
 
 
 

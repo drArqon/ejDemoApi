@@ -30,6 +30,13 @@ jobs:
       with:
         languages: csharp
         
+    - name: Sonarqube Begin
+      run: | 
+        dotnet tool install --global dotnet-sonarscanner
+        dotnet tool install --global dotnet-reportgenerator-globaltool
+        dotnet sonarscanner begin /k:"drArqon_ejDemoApi" /o:"drarqon" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.coverageReportPaths="./sonarqubecoverage/SonarQube.xml"
+
+        
         
     - name: Restore dependencies
       run: dotnet restore
@@ -69,5 +76,9 @@ jobs:
           report_title: dotnet-integration-tests-report
           github_token: ${{ secrets.GITHUB_TOKEN }}
           
+    - name: Sonarqube end
+      run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
    
       

@@ -3,14 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejDemoApi", "ejDemoApi\ejDemoApi.csproj", "{1AB49332-3F30-451E-84B7-02D02B21370B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ejDemoApi", "ejDemoApi\ejDemoApi.csproj", "{1AB49332-3F30-451E-84B7-02D02B21370B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82FE108B-8E3B-4A55-B8AD-19DC6F6EBA08}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\build.yml = .github\workflows\build.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejDemoApi.Tests", "ejDemoApi.Tests\ejDemoApi.Tests.csproj", "{EA134E0D-27E6-46FD-A152-48E5E20147EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ejDemoApi.Tests", "ejDemoApi.Tests\ejDemoApi.Tests.csproj", "{EA134E0D-27E6-46FD-A152-48E5E20147EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejDemoApi.Integration", "ejDemoApi.Integration\ejDemoApi.Integration.csproj", "{BBA9082C-D835-4051-B923-6F3B13FBC2AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{EA134E0D-27E6-46FD-A152-48E5E20147EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA134E0D-27E6-46FD-A152-48E5E20147EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA134E0D-27E6-46FD-A152-48E5E20147EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA9082C-D835-4051-B923-6F3B13FBC2AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA9082C-D835-4051-B923-6F3B13FBC2AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA9082C-D835-4051-B923-6F3B13FBC2AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA9082C-D835-4051-B923-6F3B13FBC2AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

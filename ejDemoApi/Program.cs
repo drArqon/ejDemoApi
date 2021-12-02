@@ -1,4 +1,7 @@
 using ejDemoApi;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("ejDemoApi.Integration")]
 
 var builder = WebApplication.CreateBuilder(args);
 
